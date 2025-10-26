@@ -25,7 +25,9 @@ SECRET_KEY = "django-insecure-qc9_wh7h(%itmj@=*+=(=_$5ek=k)v5qho7yl4*v=0@h-_kqc9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Application definition
@@ -78,11 +80,10 @@ WSGI_APPLICATION = "notesproject.wsgi.application"
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
-    )
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 }
+
+
 
 
 
